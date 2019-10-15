@@ -36,7 +36,8 @@ function addTodo(event) {
 }
 
 $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
-$: filteredTodos = currentFilter === 'all' ? todos : currentFilter === 'completed'
+$: filteredTodos = currentFilter === 'all' ? todos.sort(function(a,b){return a.completed-b.completed})
+    : currentFilter === 'completed'
     ? todos.filter(todo => todo.completed)
     : todos.filter(todo => !todo.completed)
 
@@ -71,7 +72,7 @@ function handleToggleComplete(event) {
 <div class="container">
     <div class="title">SVELTE NOTES</div>
 
-    <input type="text" class="todo-input" placeholder="Insert todo item ..." bind:value={newTodoTitle} on:keydown={addTodo}>
+    <input type="text" class="todo-input" placeholder="New note..." bind:value={newTodoTitle} on:keydown={addTodo}>
 
     {#each filteredTodos as todo}
         <div class="todo-item">
@@ -107,7 +108,10 @@ function handleToggleComplete(event) {
     }
     .container {
         max-width: 600px;
+        border: 1px solid #888;
         margin: 10px auto;
+        padding: 15px;
+        border-radius: 10px;
     }
     .logo {
         display: block;
