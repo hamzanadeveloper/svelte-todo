@@ -34,6 +34,11 @@ function addTodo(event) {
         newTodoTitle = '';
     }
 }
+
+$: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
+$: filteredTodos = currentFilter === 'all' ? todos : currentFilter === 'completed'
+    ? todos.filter(todo => todo.completed)
+    : todos.filter(todo => !todo.completed)
 </script>
 
 <div class="container">
