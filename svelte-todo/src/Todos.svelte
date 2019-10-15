@@ -22,6 +22,18 @@ let todos = [
 let newTodoTitle ='';
 let currentFilter = 'all';
 let nextId = 4;
+
+function addTodo(event) {
+    if (event.key === 'Enter') {
+        todos = [...todos, {
+            id: nextId,
+            completed: false,
+            title: newTodoTitle
+        }];
+        nextId = nextId + 1;
+        newTodoTitle = '';
+    }
+}
 </script>
 
 <div class="container">
