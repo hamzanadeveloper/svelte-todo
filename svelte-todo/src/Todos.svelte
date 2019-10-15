@@ -49,6 +49,10 @@ function updateFilter(newFilter) {
     currentFilter = newFilter;
 }
 
+function clearCompleted() {
+    todos = todos.filter(todo => !todo.completed);
+}
+
 </script>
 
 <div class="container">
