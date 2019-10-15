@@ -39,6 +39,16 @@ $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
 $: filteredTodos = currentFilter === 'all' ? todos : currentFilter === 'completed'
     ? todos.filter(todo => todo.completed)
     : todos.filter(todo => !todo.completed)
+
+function checkAllTodos(event) {
+    todos.forEach(todo => todo.completed = event.target.checked);
+    todos = todos;
+}
+
+function updateFilter(newFilter) {
+    currentFilter = newFilter;
+}
+
 </script>
 
 <div class="container">
