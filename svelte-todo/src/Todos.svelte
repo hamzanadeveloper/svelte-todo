@@ -53,6 +53,19 @@ function clearCompleted() {
     todos = todos.filter(todo => !todo.completed);
 }
 
+function handleDeleteTodo(event) {
+    todos = todos.filter(todo => todo.id !== event.detail.id);
+}
+function handleToggleComplete(event) {
+    const todoIndex = todos.findIndex(todo => todo.id === event.detail.id);
+    const updatedTodo = { ...todos[todoIndex], completed: !todos[todoIndex].completed};
+    todos = [
+        ...todos.slice(0, todoIndex),
+        updatedTodo,
+        ...todos.slice(todoIndex + 1),
+    ];
+}
+
 </script>
 
 <div class="container">
