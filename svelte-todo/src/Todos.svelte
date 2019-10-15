@@ -69,7 +69,7 @@ function handleToggleComplete(event) {
 </script>
 
 <div class="container">
-    <h2>Svelte Todo App
+    <div class="title">SVELTE NOTES</div>
 
     <input type="text" class="todo-input" placeholder="Insert todo item ..." bind:value={newTodoTitle} on:keydown={addTodo}>
 
@@ -98,8 +98,15 @@ function handleToggleComplete(event) {
 </div>
 
 <style>
+    .title{
+        font-family: 'Fjalla One', sans-serif;
+            text-align: center;
+            font-size: 39px;
+            font-style: italic;
+
+    }
     .container {
-        max-width: 800px;
+        max-width: 600px;
         margin: 10px auto;
     }
     .logo {
@@ -111,7 +118,20 @@ function handleToggleComplete(event) {
         width: 100%;
         padding: 10px, 20px;
         font-size: 18px;
+        border-radius: 9px;
+        outline: none;
         margin-bottom: 20px;
+    }
+    .todo-input {
+            width: 100%;
+            padding: 10px, 20px;
+            font-size: 18px;
+            border-radius: 9px;
+            outline: none;
+            margin-bottom: 20px;
+    }
+    .todo-input:focus{
+    border: 1px solid #02b44b;
     }
     .inner-container {
         display: flex;
