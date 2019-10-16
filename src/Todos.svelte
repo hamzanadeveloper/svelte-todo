@@ -1,22 +1,11 @@
 <script>
 import TodoItem from './TodoItem.svelte';
+import Header from './Header.svelte';
 
 let todos = [
     {
         id: 1,
-        title: 'My first todo',
-        completed: false,
-        topic: 'general'
-    },
-    {
-        id: 2,
-        title: 'My second todo',
-        completed: false,
-        topic: 'general'
-    },
-    {
-        id: 3,
-        title: 'My third todo',
+        title: 'Welcome to Svelte Notes! Create a note above, or create a new note topic!',
         completed: false,
         topic: 'general'
     },
@@ -93,7 +82,9 @@ function handleToggleComplete(event) {
 }
 
 </script>
+<Header />
 <div class="page">
+    <div class="empty-box"></div>
     <div class="topics">
         <div class="title" style="font-size: 24px; padding-bottom: 20px;">NOTE TOPICS</div>
 
@@ -137,8 +128,8 @@ function handleToggleComplete(event) {
 </div>
 
 <style>
-
     .page{
+        margin-top: 100px;
         display: flex;
     }
     .topics{
@@ -170,6 +161,7 @@ function handleToggleComplete(event) {
     .button-topics{
         width: 97%;
         text-align: left;
+        cursor:pointer;
         padding-left: 20px;
         margin: 2px;
         border-radius: 5px;
