@@ -48,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Todos.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="237" column="26" lean-forward="true" selection-start-line="237" selection-start-column="26" selection-end-line="237" selection-end-column="26" />
+            <state relative-caret-position="400">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -62,6 +62,9 @@
       <find>todo</find>
       <find>currentFilter</find>
       <find>active</find>
+      <find>filter</find>
+      <find>filter-</find>
+      <find>filteredTodos</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,12 +146,12 @@
       <workItem from="1571145907401" duration="617000" />
       <workItem from="1571146587536" duration="2564000" />
       <workItem from="1571174642363" duration="423000" />
-      <workItem from="1571184480763" duration="4151000" />
+      <workItem from="1571184480763" duration="5346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10600000" />
+    <option name="totallyTimeSpent" value="11795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -214,8 +217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Todos.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="237" column="26" lean-forward="true" selection-start-line="237" selection-start-column="26" selection-end-line="237" selection-end-column="26" />
+        <state relative-caret-position="400">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>

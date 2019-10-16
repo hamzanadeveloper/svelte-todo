@@ -28,18 +28,6 @@ let currentFilter = 'all';
 let nextId = 4;
 let currentTopic = 'general';
 
-
-function addTodo(event) {
-    if (event.key === 'Enter') {
-        todos = [...todos, {
-            id: nextId,
-            completed: false,
-            title: newTodoTitle
-        }];
-        nextId = nextId + 1;
-        newTodoTitle = '';
-    }
-}
 function addTopic(event) {
     if (event.key === 'Enter') {
         topics = [ ...topics, newTodoTopic]
@@ -49,7 +37,7 @@ function addTopic(event) {
 
 $: topics = ['general']
 $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
-$: filteredTodos = currentFilter === 'all' ? todos.sort(function(a,b){return a.completed-b.completed})
+$: filteredTodos = currentFilter === 'all' ? todos.filter(todo => todo.topic === currentTopic).sort(function(a,b){return a.completed-b.completed})
     : currentFilter === 'completed'
     ? todos.filter(todo => todo.completed)
     : todos.filter(todo => !todo.completed)
@@ -60,8 +48,23 @@ function checkAllTodos(event) {
     todos = todos;
 }
 
-function changeTopic(data){
-    console.log(data)
+function addTodo(event) {
+    if (event.key === 'Enter') {
+        todos = [...todos, {
+            id: nextId,
+            completed: false,
+            title: newTodoTitle,
+            topic: currentTopic
+        }];
+        nextId = nextId + 1;
+        newTodoTitle = '';
+    }
+}
+
+function changeTopic(topic){
+    currentTopic = topic
+    filteredTodos = todos.filter(todo => todo.topic === currentTopic)
+    console.log(todos)
 }
 
 function updateFilter(newFilter) {
@@ -136,13 +139,7 @@ function handleToggleComplete(event) {
 
 
 <style>
-    .button-topics{
-        width: 97%;
-        text-align: left;
-        padding-left: 20px;
-        margin: 2px;
-        border-radius: 5px;
-    }
+
     .page{
         display: flex;
     }
@@ -171,6 +168,17 @@ function handleToggleComplete(event) {
         font-family: 'Oswald', sans-serif;
         cursor: pointer;
         border-radius: 8px;
+    }
+    .button-topics{
+        width: 97%;
+        text-align: left;
+        padding-left: 20px;
+        margin: 2px;
+        border-radius: 5px;
+    }
+    .button-topics:focus{
+        background: #d0d0d0;
+        color: #000;
     }
     .clear-btn{
          width: 70px;
