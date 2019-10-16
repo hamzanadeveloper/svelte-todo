@@ -39,12 +39,12 @@ $: topics = ['general']
 $: todosRemaining = filteredTodos.filter(todo => !todo.completed).length;
 $: filteredTodos = currentFilter === 'all' ? todos.filter(todo => todo.topic === currentTopic).sort(function(a,b){return a.completed-b.completed})
     : currentFilter === 'completed'
-    ? todos.filter(todo => todo.completed)
-    : todos.filter(todo => !todo.completed)
+    ? todos.filter(todo => todo.completed && todo.topic === currentTopic)
+    : todos.filter(todo => !todo.completed && todo.topic === currentTopic)
 
 
 function checkAllTodos(event) {
-    todos.forEach(todo => todo.completed = event.target.checked);
+    todos.forEach(todo => (todo.topic === currentTopic) ? todo.completed = event.target.checked : null);
     todos = todos;
 }
 
@@ -135,8 +135,6 @@ function handleToggleComplete(event) {
     </div>
     <div class="empty-box"></div>
 </div>
-
-
 
 <style>
 
