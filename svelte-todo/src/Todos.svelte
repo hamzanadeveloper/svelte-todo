@@ -81,24 +81,40 @@ function handleToggleComplete(event) {
     {/each}
 
     <div class="inner-container">
-        <div><label><input class="inner-container-input" type="checkbox" on:change={checkAllTodos}>Check All</label></div>
-        <div>{todosRemaining} items left</div>
+        <div style="font-family: 'Raleway', sans-serif;"><label><input class="inner-container-input" type="checkbox" on:change={checkAllTodos}>Check All</label></div>
+        <div style="font-family: 'Raleway', sans-serif;">{todosRemaining} items left</div>
     </div>
 
     <div class="inner-container">
         <div>
-            <button on:click={() => updateFilter('all')} class:active="{currentFilter === 'all'}">All</button>
-            <button on:click={() => updateFilter('active')} class:active="{currentFilter === 'active'}">Active</button>
-            <button on:click={() => updateFilter('completed')} class:active="{currentFilter === 'completed'}">Completed</button>
+            <button class="filter-btn" on:click={() => updateFilter('all')} class:active="{currentFilter === 'all'}">ALL</button>
+            <button class="filter-btn" on:click={() => updateFilter('active')} class:active="{currentFilter === 'active'}">ACTIVE</button>
+            <button class="filter-btn" on:click={() => updateFilter('completed')} class:active="{currentFilter === 'completed'}">COMPLETE</button>
         </div>
         <div>
-            <button on:click={clearCompleted}>Clear Completed</button>
+            <button class="clear-btn" style="width:90px" on:click={clearCompleted}>CLEAR COMPLETED</button>
         </div>
     </div>
 
 </div>
 
 <style>
+    .filter-btn{
+        width: 70px;
+        font-family: 'Oswald', sans-serif;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    .clear-btn{
+         width: 70px;
+         font-family: 'Oswald', sans-serif;
+         cursor: pointer;
+         border-radius: 8px;
+     }
+     .clear-btn:hover{
+        background: rgb(234, 79, 36);
+        color: white;
+     }
     .title{
         font-family: 'Fjalla One', sans-serif;
             text-align: center;
@@ -135,7 +151,7 @@ function handleToggleComplete(event) {
             margin-bottom: 20px;
     }
     .todo-input:focus{
-    border: 1px solid #02b44b;
+        border: 1px solid #02b44b;
     }
     .inner-container {
         display: flex;
@@ -155,12 +171,14 @@ function handleToggleComplete(event) {
         appearance: none;
     }
     button:hover {
-        background: lightseagreen;
+       background: rgb(67,81,175);
+       color:white;
     }
     button:focus {
         outline: none;
     }
     .active {
-        background: lightseagreen;
+        background: rgb(67,81,175);
+        color:white;
     }
 </style>

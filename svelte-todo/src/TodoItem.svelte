@@ -38,6 +38,7 @@
     .remove-item {
         cursor: pointer;
         margin-left: 15px;
+        font-family: 'Raleway', sans-serif;
     }
     .remove-item:hover {
         color: lightseagreen;
@@ -49,6 +50,7 @@
     .todo-item-label {
         border: 1px solid white;
         margin-left: 12px;
+        font-family: 'Raleway', sans-serif;
     }
     .completed {
         text-decoration: line-through;
