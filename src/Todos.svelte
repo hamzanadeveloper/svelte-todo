@@ -32,12 +32,12 @@ $: filteredTodos = currentFilter === 'all' ? todos.filter(todo => todo.topic ===
     : todos.filter(todo => !todo.completed && todo.topic === currentTopic)
 
 
-function checkAllTodos(event) {
+const checkAllTodos = (event) => {
     todos.forEach(todo => (todo.topic === currentTopic) ? todo.completed = event.target.checked : null);
     todos = todos;
 }
 
-function addTodo(event) {
+const addTodo = (event) =>{
     if (event.key === 'Enter') {
         todos = [...todos, {
             id: nextId,
@@ -50,28 +50,28 @@ function addTodo(event) {
     }
 }
 
-function changeTopic(topic){
+const changeTopic = (topic) => {
     currentTopic = topic
     filteredTodos = todos.filter(todo => todo.topic === currentTopic)
     console.log(todos)
 }
 
-function updateFilter(newFilter) {
+const updateFilter = (newFilter) => {
     currentFilter = newFilter;
 }
 
-function clearCompleted() {
+const clearCompleted = () => {
     todos = todos.filter(todo => !todo.completed);
 }
 
-function handleDeleteTodo(event) {
+const handleDeleteTodo = (event) => {
     todos = todos.filter(todo => todo.id !== event.detail.id);
 }
-function capitalizeFirstLetter(string) {
+const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function handleToggleComplete(event) {
+const handleToggleComplete = (event) => {
     const todoIndex = todos.findIndex(todo => todo.id === event.detail.id);
     const updatedTodo = { ...todos[todoIndex], completed: !todos[todoIndex].completed};
     todos = [
