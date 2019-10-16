@@ -1,10 +1,14 @@
+<script>
+	let src = '../public/images/hna_black.png';
+</script>
+
 <div class="header-black">
-        <img onclick="location.href = 'https://www.hamzaarshad.com'" src="../public/hna_black.png" class="logo-hna">
+        <img {src} alt="logo image" onclick="location.href = 'https://www.hamzaarshad.com'" class="logo-hna">
         <div class="header-item"><a href="mailto:hamza.n.arshadwork@gmail.com" style="color: black">CONTACT</a></div>
-        <div onclick="location.href = 'https://www.hamzaarshad.com/app/views/resume.html'" class="header-item"><a style="color: #000000;">RESUME</a></div>
-        <div onclick="location.href = 'https://www.hamzaarshad.com/app/views/portfolio.html'" class="header-item"><a style="color: #000000;">PORTFOLIO</a></div>
-        <div onclick="location.href = 'https://www.hamzaarshad.com/app/views/profile.html'" class="header-item"><a style="color: #000000;">ABOUT</a></div>
-        <div onclick="location.href = 'https://www.hamzaarshad.com'" class="header-item"><a style="color: #000000;">HOME</a></div>
+        <div onclick="location.href = 'https://www.hamzaarshad.com/app/views/resume.html'" class="header-item">RESUME</div>
+        <div onclick="location.href = 'https://www.hamzaarshad.com/app/views/portfolio.html'" class="header-item">PORTFOLIO</div>
+        <div onclick="location.href = 'https://www.hamzaarshad.com/app/views/profile.html'" class="header-item">ABOUT</div>
+        <div onclick="location.href = 'https://www.hamzaarshad.com'" class="header-item">HOME</div>
 </div>
 
 <style>
