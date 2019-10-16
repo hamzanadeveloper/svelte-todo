@@ -2,6 +2,5 @@
 <project version="4">
   <component name="JavaScriptLibraryMappings">
     <file url="PROJECT" libraries="{material}" />
-    <excludedPredefinedLibrary name="svelte-todo/node_modules" />
   </component>
 </project>
