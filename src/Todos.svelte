@@ -60,6 +60,10 @@ function checkAllTodos(event) {
     todos = todos;
 }
 
+function changeTopic(data){
+    console.log(data)
+}
+
 function updateFilter(newFilter) {
     currentFilter = newFilter;
 }
@@ -95,7 +99,7 @@ function handleToggleComplete(event) {
         <div class="active-topics">TOPICS</div>
 
         {#each topics as topic}
-            <div>{capitalizeFirstLetter(topic)}</div>
+            <button class="button-topics" on:click={()=>changeTopic(topic)} >{capitalizeFirstLetter(topic)}</button>
         {/each}
     </div>
     <div class="container">
@@ -132,6 +136,13 @@ function handleToggleComplete(event) {
 
 
 <style>
+    .button-topics{
+        width: 97%;
+        text-align: left;
+        padding-left: 20px;
+        margin: 2px;
+        border-radius: 5px;
+    }
     .page{
         display: flex;
     }
@@ -224,8 +235,8 @@ function handleToggleComplete(event) {
         appearance: none;
     }
     button:hover {
-       background: rgb(67,81,175);
-       color:white;
+       background: #d0d0d0;
+       color:black;
     }
     button:focus {
         outline: none;
